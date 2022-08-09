@@ -1,0 +1,186 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+
+<title>Creditcard Estimator</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+
+
+        <form action="/predict" method="post">
+            <legend>Creditcard Defaulter Estimation Form</legend>
+            <div class="mb-3">
+                <label class="form-label">ID</label>
+                <input class="form-control" type="text" name="ID" placeholder="Enter a value of id"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">LIMIT_BAL</label>
+                    <input class="form-control" type="text" name="limit_bal" placeholder="Enter a value of limit_bal"
+                        required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">AGE</label>
+                <input class="form-control" type="text" name="age" placeholder="Enter a value of age"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">BILL_AMT1</label>
+                <input class="form-control" type="text" name="bill_amt1"
+                    placeholder="Enter a value of bill_amt1" required />
+
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">BILL_AMT2</label>
+                    <input class="form-control" type="text" name="bill_amt2"
+                        placeholder="Enter a value of bill_amt2" required />
+            
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">BILL_AMT3</label>
+                    <input class="form-control" type="text" name="bill_amt3"
+                            placeholder="Enter a value of bill_amt3" required />  
+            
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">BILL_AMT4</label>
+                    <input class="form-control" type="text" name="bill_amt4"
+                                placeholder="Enter a value of bill_amt4" required />    
+                                
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">BILL_AMT5</label>
+                    <input class="form-control" type="text" name="bill_amt5"
+                                placeholder="Enter a value of bill_amt5" required />  
+                                
+            </div>
+            <div class="mb-3">
+                    <label class="form-label">BILL_AMT6</label>
+                    <input class="form-control" type="text" name="bill_amt6"
+                                placeholder="Enter a value of bill_amt6" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT1</label>
+                <input class="form-control" type="text" name="pay_amt1" placeholder="Enter a value of pay_amt1"
+                    required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT2</label>
+                <input class="form-control" type="text" name="pay_amt2" placeholder="Enter a value of pay_amt2"
+                    required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT3</label>
+                <input class="form-control" type="text" name="pay_amt3"
+                    placeholder="Enter a value of pay_amt3" required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT4</label>
+                <input class="form-control" type="text" name="pay_amt4"
+                        placeholder="Enter a value of pay_amt4" required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT5</label>
+                <input class="form-control" type="text" name="pay_amt5"
+                        placeholder="Enter a value of pay_amt5" required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PAY_AMT6</label>
+                <input class="form-control" type="text" name="pay_amt6"
+                        placeholder="Enter a value of pay_amt6" required />
+
+            </div>
+            <div class="mb-3"_
+                <label class="form-label">SEX</label>
+                        <select class="form-control" name="sex" placeholder="Enter a value of sex"
+                            required>
+        
+                            <option value="<1=male">
+                                &lt;1=male
+                            </option>
+                            <option value="2=female">
+                                2=female
+                            </option>
+
+
+            </div>
+            <div class="mb-3"_
+                <label class="form-label">DEFAULT_PAYMENT_NEXT_MONTH</label>
+                <select class="form-control" name="default_payment_next_month" placeholder="Enter a value of default_payment_next_month"
+                    required>
+
+                    <option value="<1=yes">
+                        &lt;1=yes
+                    </option>
+                    <option value="0=no">
+                        0=no
+                    </option>
+
+                </select>
+            </div>
+            <div class="mb-3">
+
+                <input class="btn btn-primary" type="submit" value="Predict Creditcard Defaulter Payment Next Month" required />
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+              Creditcard Defaulter 
+            </div>
+            <div class="card-body">
+        {% if context['creditcard_data'] is not none %}
+        <table class="table table-striped">
+            <caption>Creditcard Defaulter </caption>
+            <tr>
+                <th>Input Feature</th>
+                <th>Feature Value</th>
+
+            </tr>
+            {% for column,value in context['creditcard_data'].items() %}
+
+
+
+            <tr>
+                <td>{{column}}</td>
+                <td>{{value[0]}}</td>
+            </tr>
+
+            {% endfor %}
+            <tr>
+
+                <td>default_payment_next_month </td>
+                <td>
+                    {{ context['default_payment_next_month'] }}
+                </td>
+            </tr>
+        </table>
+
+        {% else %}
+       
+              <h5 class="card-title">Submit Form</h5>
+              <p class="card-text">Kindly provide necessary information to estimate crditcard defaulter next month</p>
+            
+         
+
+        {% endif %}
+        Go to <a href="/" class="btn btn-primary">Home</a>
+    </div>
+</div>
+    </div>
+
+    {% endblock %}

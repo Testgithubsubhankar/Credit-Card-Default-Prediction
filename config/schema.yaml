@@ -1,0 +1,149 @@
+columns:
+    ID: float
+    LIMIT_BAL: float
+    SEX: category
+    EDUCATION: category
+    MARRIAGE: category
+    AGE: float
+    PAY_0: category
+    PAY_2: category
+    PAY_3: category
+    PAY_4: category
+    PAY_5: category
+    PAY_6: category
+    BILL_AMT1: float
+    BILL_AMT2: float
+    BILL_AMT3: float
+    BILL_AMT4: float
+    BILL_AMT5: float
+    BILL_AMT6: float
+    PAY_AMT1: float
+    PAY_AMT2: float
+    PAY_AMT3: float
+    PAY_AMT4: float
+    PAY_AMT5: float
+    PAY_AMT6: float
+    DEFAULT.PAYMENT.NEXT.MONTH: category
+
+numerical_columns:
+    -ID
+    -LIMIT_BAL
+    -AGE
+    -BILL_AMT1
+    -BILL_AMT2
+    -BILL_AMT3
+    -BILL_AMT4
+    -BILL_AMT5
+    -BILL_AMT6
+    -PAY_AMT1
+    -PAY_AMT2
+    -PAY_AMT3
+    -PAY_AMT4
+    -PAY_AMT5
+    -PAY_AMT6
+
+categorical_columns:
+    -SEX
+    -EDUCATION
+    -MARRIAGE
+    -PAY_0
+    -PAY_2
+    -PAY_3
+    -PAY_4
+    -PAY_5
+    -PAY_6
+    
+
+
+target_column: default.payment.next.month
+
+
+domain_value:
+  SEX:
+    -1=male
+    -2=female
+
+  EDUCATION:
+    -1=graduate school
+    -2=university
+    -3=high school
+    -4=others
+    -5=unknown
+    -6=unknown
+
+  MARRIAGE:
+    -1=married
+    -2=single
+    -3=others
+
+  PAY_0:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
+
+  PAY_2:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
+
+  PAY_3:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
+  
+  PAY_4:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
+
+  PAY_5:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
+  
+  PAY_6:
+    --1=pay duly
+    -1=payment delay for one month
+    -2=payment delay for two months
+    -3=payment delay for three months
+    -4=payment delay for four months
+    -5=payment delay for five months
+    -6=payment delay for six months
+    -7=payment delay for seven months
+    -8=payment delay for eight months
+    -9=payment delay for nine months and above
